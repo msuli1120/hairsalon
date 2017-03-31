@@ -1,0 +1,31 @@
+{% include 'header.html.twig' %}
+
+  <h2>Stylist: {{ stylist.getName }}</h2>
+  <h4>Add A Client</h4>
+  <form action="/addclient" method="post">
+    <input name="styid" type="hidden" value="{{ stylist.getId }}">
+    <label for="name">Enter Name:</label>
+    <input name="name" id="name" type="text" class="form-control">
+    <label for="gender">Gender:</label>
+    <input name="gender" id="gender" type="text" class="form-control">
+    <label for="age">Age:</label>
+    <input name="age" id="age" type="number" class="form-control">
+    <label for="address">Address:</label>
+    <input name="address" id="address" type="text" class="form-control">
+    <button type="submit" class="btn bg-success">Add</button>
+  </form>
+
+  <form action="/" method="get">
+    <button type="submit" class="btn bg-primary">Home</button>
+  </form>
+
+  {% if clients is not empty %}
+    <h4>All {{ stylist.getName }}'s clients</h4>
+    {% for client in clients %}
+      <li><a href="/client/{{ client.id }}">{{ client.name }}</a></li>
+    {% endfor %}
+    {% else %}
+      <h2>{{ stylist.getName }}. You don't have any clients yet</h2>
+  {% endif %}
+
+{% include 'footer.html.twig' %}

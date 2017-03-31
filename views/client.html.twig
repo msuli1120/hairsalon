@@ -1,0 +1,22 @@
+{% include 'header.html.twig' %}
+
+  <h4>Info About {{ client.getName }}</h4>
+  <p>Name: {{ client.getName }}</p>
+  <p>Gender: {{ client.getGender }}</p>
+  <p>Age: {{ client.getAge }}</p>
+  <p>Address: {{ client.getAddress }}</p>
+  <p>Enroll Date: {{ client.getEnrollDate }}</p>
+  <p>Currently assigned by <a href="/stylist/{{ stylist.getId }}">{{ stylist.getName }}</a></p>
+
+  <a href="/client/{{ client.getId }}/edit"><button>Edit</button></a>
+
+  <form action="/client/{{ client.getId }}" method="post">
+    <input name="_method" type="hidden" value="delete">
+    <button type="submit" class="btn bg-danger">Delete {{ client.getName }}</button>
+  </form>
+
+  <form action="/" method="get">
+    <button class="btn bg-primary">Home</button>
+  </form>
+
+{% include 'footer.html.twig' %}

@@ -95,7 +95,7 @@
       $executed->execute();
       $result = $executed->fetch(PDO::FETCH_ASSOC);
       if($result['id']==$id){
-        $new_client = new Client($result['name'],$result['gender'],$result['age'],$result['address'],$result['stylist_id'],$result['enroll_date'],$result['id']);
+        $new_client = new Client($result['name'],$result['gender'],(int)$result['age'],$result['address'],$result['stylist_id'],$result['enroll_date'],$result['id']);
         return $new_client;
       }
     }

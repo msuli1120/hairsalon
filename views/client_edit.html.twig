@@ -16,4 +16,10 @@
     <button type="submit" class="btn bg-warning">Update</button>
   </form>
 
+  <form action="/client/{{ client.getId }}" method="post">
+    <input name="_method" type="hidden" value="delete">
+    <button type="submit" class="btn bg-danger">Delete {{ client.getName }}</button>
+  </form>
+
+
 {% include 'footer.html.twig' %}

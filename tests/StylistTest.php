@@ -1,4 +1,10 @@
 <?php
+
+  /**
+  * @backupGlobals disabled
+  * @backupStaticAttributes disabled
+  */
+
   require_once "src/Stylist.php";
   require_once "src/Client.php";
 
@@ -15,7 +21,15 @@
       Client::deleteAll();
     }
 
-    function testsave() {
+    function testGetId(){
+      $name = "xing";
+      $stylist = new Stylist($name);
+      $stylist->save();
+      $result = $stylist->getId();
+      $this->assertEquals(true, is_numeric($result));
+    }
+
+    function testSave(){
       $stylist = "Xing";
       $test_stylist = new Stylist($stylist);
       $test_stylist->save();
@@ -28,6 +42,8 @@
       $executed = $client->save();
       $this->assertTrue($executed, "Task not successfully saved to database");
     }
+
+
 
 
   }

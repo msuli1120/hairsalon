@@ -36,7 +36,7 @@ _The owner should be able to add stylists, and for each stylist, add clients who
 8. _SELECT * FROM stylists;_
 
 
-[click here](https://github.com/msuli1120/hairsalon.git) to check out the project
+[click here](https://github.com/msuli1120/hairsalon.git) to check out the project.
 
 ### License
 *This application is licensed under Xing Li's name*

@@ -10,11 +10,6 @@
 
   <a href="/client/{{ client.getId }}/edit"><button>Edit</button></a>
 
-  <form action="/client/{{ client.getId }}" method="post">
-    <input name="_method" type="hidden" value="delete">
-    <button type="submit" class="btn bg-danger">Delete {{ client.getName }}</button>
-  </form>
-
   <form action="/" method="get">
     <button class="btn bg-primary">Home</button>
   </form>

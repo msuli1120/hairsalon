@@ -125,10 +125,10 @@
 
     function delete(){
       $executed = $GLOBALS['db']->exec("DELETE FROM clients WHERE id = {$this->getId()};");
-      if ($executed) {
-         return true;
-      } else {
+      if (!$executed) {
          return false;
+      } else {
+         return true;
       }
     }
 

@@ -25,14 +25,14 @@
   Request::enableHttpMethodParameterOverride();
 
   $app->get("/", function () use ($app) {
-    return $app['twig']->render('index.html.twig', array('results'=>Stylist::getAll(), 'clients'=>Client::newest()));
+    return $app['twig']->render('index.html.twig', array('results'=>Stylist::getAll(), 'clients'=>Client::newest(), 'total'=>Client::total()));
   });
 
   $app->post("/stylist", function () use ($app) {
     if(!empty($_POST['stylist'])){
       $new_stylist = new Stylist($_POST['stylist']);
       $new_stylist->save();
-      return $app['twig']->render('index.html.twig', array('results'=>Stylist::getAll(), 'clients'=>Client::newest()));
+      return $app['twig']->render('index.html.twig', array('results'=>Stylist::getAll(), 'clients'=>Client::newest(), 'total'=>Client::total()));
     } else {
       return $app['twig']->render('warning.html.twig');
     }

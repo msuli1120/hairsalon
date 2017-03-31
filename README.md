@@ -32,9 +32,8 @@ _The owner should be able to add stylists, and for each stylist, add clients who
 4. _CREATE TABLE stylists (id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255));_
 5. _CREATE TABLE stylists (id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), stylist_id INT NOT NULL);_
 6. _SHOW TABLES;_
-7. _INSERT INTO stylists (name) VALUES ('{$this->getName()}');_
-8. _DELETE FROM stylists;_
-9. _SELECT * FROM stylists;_
+7. _DELETE FROM stylists;_
+8. _SELECT * FROM stylists;_
 
 
 [click here](https://github.com/msuli1120/hairsalon.git) to check out the project

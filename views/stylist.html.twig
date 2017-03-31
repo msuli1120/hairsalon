@@ -1,7 +1,7 @@
 {% include 'header.html.twig' %}
 
   <h2>Stylist: {{ stylist.getName }}</h2>
-  <h4>Add A Client</h4>
+  <h4>Fill out the form to add a client</h4>
   <form action="/addclient" method="post">
     <input name="styid" type="hidden" value="{{ stylist.getId }}">
     <label for="name">Enter Name:</label>

@@ -32,7 +32,7 @@
     if(!empty($_POST['stylist'])){
       $new_stylist = new Stylist($_POST['stylist']);
       $new_stylist->save();
-      return $app['twig']->render('index.html.twig', array('results'=>Stylist::getAll()));
+      return $app['twig']->render('index.html.twig', array('results'=>Stylist::getAll(), 'clients'=>Client::newest()));
     } else {
       return $app['twig']->render('warning.html.twig');
     }

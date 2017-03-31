@@ -30,7 +30,7 @@ _The owner should be able to add stylists, and for each stylist, add clients who
 2. _CREATE DATABASE hair_salon;_
 3. _USE hair_salon;_
 4. _CREATE TABLE stylists (id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255));_
-5. _CREATE TABLE stylists (id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), stylist_id INT NOT NULL);_
+5. _CREATE TABLE clients (id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), gender VARCHAR(255), age INT, stylist_id INT NOT NULL, address VARCHAR(255), enroll_date VARCHAR(255));_
 6. _SHOW TABLES;_
 7. _DELETE FROM stylists;_
 8. _SELECT * FROM stylists;_

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 31, 2017 at 04:57 PM
+-- Generation Time: Mar 31, 2017 at 04:59 PM
 -- Server version: 5.7.17-0ubuntu0.16.04.1
 -- PHP Version: 7.0.15-0ubuntu0.16.04.4
 
@@ -17,10 +17,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `hair_salon_test`
+-- Database: `hair_salon`
 --
-CREATE DATABASE IF NOT EXISTS `hair_salon_test` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `hair_salon_test`;
+CREATE DATABASE IF NOT EXISTS `hair_salon` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `hair_salon`;
 
 -- --------------------------------------------------------
 
@@ -38,6 +38,16 @@ CREATE TABLE `clients` (
   `enroll_date` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `clients`
+--
+
+INSERT INTO `clients` (`id`, `name`, `stylist_id`, `gender`, `age`, `address`, `enroll_date`) VALUES
+(4, 'Xing', 1, 'male', 25, 'west seattle', '2017-03-31 10:22:32'),
+(6, 'Jade Garden', 1, 'male', 25, 'downtown', '2017-03-31 10:39:08'),
+(9, 'Li', 2, 'male', 24, 'west seattle', '2017-03-31 12:49:10'),
+(12, 'Matt', 3, 'male', 25, 'downtown', '2017-03-31 14:34:38');
+
 -- --------------------------------------------------------
 
 --
@@ -48,6 +58,17 @@ CREATE TABLE `stylists` (
   `id` int(11) NOT NULL,
   `name` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `stylists`
+--
+
+INSERT INTO `stylists` (`id`, `name`) VALUES
+(1, 'Xing'),
+(2, 'Max'),
+(3, 'Rob'),
+(4, 'Hello'),
+(5, 'Hello');
 
 --
 -- Indexes for dumped tables
@@ -73,12 +94,12 @@ ALTER TABLE `stylists`
 -- AUTO_INCREMENT for table `clients`
 --
 ALTER TABLE `clients`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT for table `stylists`
 --
 ALTER TABLE `stylists`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

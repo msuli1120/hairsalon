@@ -162,8 +162,28 @@
       $this->assertEquals(25,$test_client->getAge());
     }
 
+    function testUpdateAddress(){
+      $name = "Xing";
+      $test_stylist = new Stylist($name);
+      $test_stylist->save();
+      $stylist_id = $test_stylist->getId();
 
+      $client_name = "Eliot";
+      $client_gender = "male";
+      $client_age = 33;
+      $client_address = "downtown";
+      $test_client = new Client($client_name, $client_gender, $client_age, $client_address, $stylist_id);
+      $test_client->save();
 
+      $client_name2 = "Max";
+      $client_gender2 = "male";
+      $client_age2 = 25;
+      $client_address2 = "belletown";
+
+      $test_client->update($client_name2, $client_gender2, $client_age2, $client_address2);
+
+      $this->assertEquals("belletown",$test_client->getAddress());
+    }
   }
 
 ?>

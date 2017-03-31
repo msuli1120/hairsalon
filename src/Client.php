@@ -133,7 +133,7 @@
     }
 
     static function total(){
-      $executed = $GLOBALS['db']->query("SELECT COUNT(name) AS total FROM clients;");
+      $executed = $GLOBALS['db']->query("SELECT COUNT(id) AS total FROM clients;");
       $result = $executed->fetch();
       return $result['total'];
     }

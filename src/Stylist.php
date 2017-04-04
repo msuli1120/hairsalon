@@ -51,5 +51,31 @@
       }
     }
 
+    function delete(){
+      $executed = $GLOBALS['db']->exec("DELETE FROM stylists WHERE name = '{$this->getName()}';");
+      if($executed){
+        return true;
+      } else {
+        return false;
+      }
+      $executed = $GLOBALS['db']->exec("DELETE FROM clients WHERE stylist_id = {$this->getId()};");
+      if($executed){
+        return true;
+      } else {
+        return false;
+      }
+    }
+
+    static function findByName($name){
+      $executed = $GLOBALS['db']->prepare("SELECT * FROM stylists WHERE name = :name");
+      $executed->bindParam(':name', $name, PDO::PARAM_STR);
+      $executed->execute();
+      $result = $executed->fetch(PDO::FETCH_ASSOC);
+      if($result['name'] == $name){
+        $new_stylist = new Stylist($result['name'],$result['id']);
+        return $new_stylist;
+      }
+    }
+
   }
 ?>

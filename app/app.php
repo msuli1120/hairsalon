@@ -80,5 +80,11 @@
     return $app['twig']->render('stylist.html.twig', array('stylist'=>Stylist::find($stylist_id), 'clients'=>Client::getAll($stylist_id)));
   });
 
+  $app->post("/delete_stylist", function() use ($app) {
+    $stylist = Stylist::findByName($_POST['stylist']);
+    $stylist->delete();
+    return $app['twig']->render('index.html.twig', array('results'=>Stylist::getAll(), 'clients'=>Client::newest(), 'total'=>Client::total()));
+  });
+
   return $app;
 ?>

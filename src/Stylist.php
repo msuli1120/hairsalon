@@ -53,16 +53,14 @@
 
     function delete(){
       $executed = $GLOBALS['db']->exec("DELETE FROM stylists WHERE name = '{$this->getName()}';");
-      if($executed){
-        return true;
-      } else {
+      if(!$executed){
         return false;
       }
       $executed = $GLOBALS['db']->exec("DELETE FROM clients WHERE stylist_id = {$this->getId()};");
-      if($executed){
-        return true;
-      } else {
+      if(!$executed){
         return false;
+      } else {
+        return true;
       }
     }
 
